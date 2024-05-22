@@ -14,8 +14,8 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish",
-    "version:beta": "changeset version --snapshot beta",
-    "release:beta": "changeset publish --snapshot --no-git-tag --tag beta",
+    "version:beta": "changeset version --tag beta",
+    "release:beta": "changeset publish --no-git-tag --tag beta",
     "prepare": "husky"
   },
   "devDependencies": {
