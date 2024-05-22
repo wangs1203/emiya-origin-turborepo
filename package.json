@@ -9,12 +9,13 @@
     "clean": "turbo run clean && rimraf node_modules .turbo",
     "typecheck": "turbo run typecheck",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "pre": "changeset pre",
+    "pre:enter": "changeset pre enter beta",
+    "pre:exit": "changeset pre exit beta",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... && changeset publish",
-    "version:canary": "changeset version --snapshot canary",
-    "release:canary": "changeset publish --snapshot --no-git-tag --tag canary",
+    "version:beta": "changeset version --snapshot beta",
+    "release:beta": "changeset publish --snapshot --no-git-tag --tag beta",
     "prepare": "husky"
   },
   "devDependencies": {
