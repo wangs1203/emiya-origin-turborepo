@@ -1,0 +1,4 @@
+{
+  "extends": "@emiya-turbo-origin/typescript-config/base",
+  "include": ["."]
+}

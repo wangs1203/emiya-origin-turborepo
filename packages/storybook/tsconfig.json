@@ -1,0 +1,5 @@
+{
+  "extends": "@emiya-turbo-origin/typescript-config/react-app",
+  "include": ["stories", ".storybook/*", "*.js", "*.ts"],
+  "exclude": ["dist", "build", "node_modules"]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@emiya-turbo-origin/typescript-config",
+  "version": "0.0.0",
+  "homepage": "http://readme",
+  "description": "typescript configurations",
+  "keywords": [
+    "typescript",
+    "typescript configuration"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "http://issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://.git",
+    "directory": "packages/typescript-config"
+  },
+  "license": "MIT",
+  "exports": {
+    "./base": "./base.json",
+    "./library": "./library.json",
+    "./react-app": "./react-app.json",
+    "./react-library": "./react-library.json",
+    "./nextjs": "./nextjs.json"
+  },
+  "files": [
+    "base.json",
+    "library.json",
+    "react-app.json",
+    "react-library.json",
+    "nextjs.json"
+  ]
+}

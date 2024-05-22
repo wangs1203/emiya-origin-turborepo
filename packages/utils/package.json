@@ -1,0 +1,59 @@
+{
+  "name": "@emiya-turbo-origin/utils",
+  "version": "0.0.0",
+  "homepage": "http://",
+  "description": "Utilities",
+  "author": "Emiya Leon <wangs.coder@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "utilities",
+    "utils"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/wangs1203/emiya-origin-turborepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/wangs1203/emiya-origin-turborepo.git",
+    "directory": "packages/utils"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "tsup src",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf .turbo node_modules dist"
+  },
+  "devDependencies": {
+    "@ys-origin/typescript-config": "workspace:*",
+    "@ys-origin/eslint-config": "workspace:*",
+    "typescript": "^5.3.3"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2020",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@emiya-turbo-origin/tailwind-config",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "http://",
+  "description": "tailwindcss configurations for internal",
+  "author": "Emiya Leon <wangs.coder@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "Tailwind",
+    "tailwindcss",
+    "atom css",
+    "css"
+  ],
+  "bugs": {
+    "url": "https://github.com/wangs1203/emiya-origin-turborepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/wangs1203/emiya-origin-turborepo.git",
+    "directory": "packages/tailwind-config"
+  },
+  "main": "./tailwind.config.ts",
+  "exports": {
+    ".": "./tailwind.config.ts"
+  },
+  "scripts": {
+    "build": "tsup tailwind.config.ts --dts",
+    "build:fast": "tsup tailwind.config.ts",
+    "dev": "tsup tailwind.config.ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf node_modules dist"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3"
+  },
+  "peerDependencies": {
+    "tailwindcss": ">=3.4.3"
+  },
+  "tsup": {
+    "clean": true,
+    "target": "es2020",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}
