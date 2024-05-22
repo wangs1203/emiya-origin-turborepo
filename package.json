@@ -2,16 +2,53 @@
   "name": "emiya-turborepo-demo",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build --filter=!@ys-origin/storybook --filter=!@ys-origin/next-docs --filter=!@ys-origin/next-web",
+    "build:fast": "turbo run build:fast",
+    "dev": "turbo run dev --filter=!@ys-origin/next-docs --filter=!@ys-origin/next-web",
+    "lint": "turbo run lint --filter=!@ys-origin/next-docs --filter=!@ys-origin/next-web",
+    "clean": "turbo run clean && rimraf node_modules .turbo",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "pre": "changeset pre",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build --filter=docs^... && changeset publish",
+    "version:canary": "changeset version --snapshot canary",
+    "release:canary": "changeset publish --snapshot --no-git-tag --tag canary",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@emiya-turbo-origin/eslint-config": "workspace:*",
     "@emiya-turbo-origin/typescript-config": "workspace:*",
+    "@storybook/react": "^8.1.1",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "clean-package": "2.2.0",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "turbo": "^1.13.3"
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "turbo": "latest",
+    "typescript": "^5.4.5"
+  },
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ]
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "tailwindcss": "^3.4.3"
+    }
   },
   "packageManager": "pnpm@8.15.8",
   "engines": {

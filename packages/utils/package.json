@@ -41,13 +41,16 @@
     "dev": "tsup src",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "clean": "rimraf .turbo node_modules dist"
+    "clean": "rimraf .turbo node_modules dist",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
   },
   "devDependencies": {
-    "@ys-origin/typescript-config": "workspace:*",
-    "@ys-origin/eslint-config": "workspace:*",
+    "@emiya-turbo-origin/typescript-config": "workspace:*",
+    "@emiya-turbo-origin/eslint-config": "workspace:*",
     "typescript": "^5.3.3"
   },
+  "clean-package": "../../clean-package.config.json",
   "tsup": {
     "clean": true,
     "target": "es2020",

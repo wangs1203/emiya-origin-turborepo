@@ -80,7 +80,6 @@
     "@modern-js/module-tools": "^2.49.3",
     "@modern-js/plugin-tailwindcss": "^2.49.3",
     "@emiya-turbo-origin/eslint-config": "workspace:*",
-    "@emiya-turbo-origin/hooks": "workspace:*",
     "@emiya-turbo-origin/utils": "workspace:*",
     "@emiya-turbo-origin/tailwind-config": "workspace:*",
     "@emiya-turbo-origin/typescript-config": "workspace:*",
