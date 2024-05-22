@@ -3,9 +3,13 @@ import type { ModalProps as AntdModalProps } from 'antd';
 import type { DraggableEvent, DraggableData } from 'react-draggable';
 
 import { memo, useCallback, useMemo, useRef, useState } from 'react';
-import { useEvent } from '@em-origin/hooks';
 import { Modal as AntdModal } from 'antd';
 import Draggable from 'react-draggable';
+import { prefixClass } from '@emiya-turbo-origin/utils';
+
+const addPrefix = prefixClass('em-modal');
+
+console.log(addPrefix('__content'));
 
 export interface ModalProps extends AntdModalProps {
   draggable?: boolean;
@@ -34,7 +38,7 @@ export const Modal = memo(function BaseModal({
     () =>
       draggable ? (
         <div
-          className="tw-w-full tw-cursor-move tw-draggable-handle"
+          className="em-w-full em-cursor-move em-draggable-handle"
           // eslint-disable-next-line jsx-a11y/mouse-events-have-key-events -- disable
           onMouseOut={() => {
             setDragDisabled(true);
@@ -52,21 +56,19 @@ export const Modal = memo(function BaseModal({
     [draggable, title, dragDisabled],
   );
 
-  const handleDragStart = useEvent(
-    (_e: DraggableEvent, data: DraggableData) => {
-      const { clientWidth, clientHeight } =
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- 在一些特定的情况或旧的浏览器中，可能需要通过 document.body 来获取或操作页面内容
-        document.documentElement || document.body;
-      const targetRect = draggleRef.current?.getBoundingClientRect();
-      if (!targetRect) return;
-      setBounds({
-        left: -targetRect.left + data.x,
-        top: -targetRect.top + data.y,
-        right: clientWidth - (targetRect.right - data.x),
-        bottom: clientHeight - (targetRect.bottom - data.y),
-      });
-    },
-  );
+  const handleDragStart = (_e: DraggableEvent, data: DraggableData) => {
+    const { clientWidth, clientHeight } =
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- 在一些特定的情况或旧的浏览器中，可能需要通过 document.body 来获取或操作页面内容
+      document.documentElement || document.body;
+    const targetRect = draggleRef.current?.getBoundingClientRect();
+    if (!targetRect) return;
+    setBounds({
+      left: -targetRect.left + data.x,
+      top: -targetRect.top + data.y,
+      right: clientWidth - (targetRect.right - data.x),
+      bottom: clientHeight - (targetRect.bottom - data.y),
+    });
+  };
 
   const renderModal = useCallback(
     (modal: ReactNode) => {
@@ -75,7 +77,7 @@ export const Modal = memo(function BaseModal({
         <Draggable
           bounds={bounds}
           disabled={dragDisabled}
-          handle=".draggable-handle"
+          handle=".em-draggable-handle"
           onStart={handleDragStart}
         >
           <div ref={draggleRef}>{innerModal}</div>

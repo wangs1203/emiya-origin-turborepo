@@ -20,17 +20,7 @@
     "url": "git+http://github.com/wangs1203/emiya-origin-turborepo.git",
     "directory": "packages/utils"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./src/index.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./package.json": "./package.json"
-  },
+  "main": "./src/index.ts",
   "sideEffects": false,
   "files": [
     "dist/**"

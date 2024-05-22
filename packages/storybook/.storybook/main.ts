@@ -15,7 +15,8 @@ const config: StorybookConfig = {
   stories: [
     '../stories/**/*.mdx',
     './welcome.mdx',
-    '../../react-components/stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../../rc/stories/**/*.stories.@(js|jsx|ts|tsx)',
+    '../../hooks/stories/**/*.stories.@(js|jsx|ts|tsx)',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [

@@ -6,8 +6,8 @@ const config: Pick<Config, 'prefix' | 'presets' | 'content'> = {
   content: [
     './stories/**/*.{js,jsx,ts,tsx}',
     './.storybook/welcome.mdx',
-    '../react-components/src/**/*.{js,jsx,ts,tsx}',
-    '../react-components/stories/**/*.{js,jsx,ts,tsx}',
+    '../rc/src/**/*.{js,jsx,ts,tsx}',
+    '../rc/stories/**/*.{js,jsx,ts,tsx}',
   ],
   // darkMode: 'class',
   prefix: 'em-',
