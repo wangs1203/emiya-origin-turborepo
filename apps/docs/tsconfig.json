@@ -1,5 +1,5 @@
 {
-  "extends": "@emiya-turbo-origin/typescript-config/nextjs.json",
+  "extends": "@emiya-turbo-origin/typescript-config/nextjs",
   "compilerOptions": {
     "plugins": [
       {
