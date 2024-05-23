@@ -90,7 +90,9 @@ export function flattenNodes(
       return;
     }
     nodes.forEach((node) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access -- wait a few time to refactor
       arr.push(getNewNode(node));
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- wait a few time to refactor
       loop(node[childrenKey]);
     });
   }
