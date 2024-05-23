@@ -28,17 +28,24 @@
   "scripts": {
     "build": "tsup src --dts",
     "build:fast": "tsup src",
-    "dev": "tsup src",
-    "lint": "eslint . --max-warnings 0",
+    "dev": "tsup src --watch",
+    "lint": "eslint src --max-warnings 0",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf .turbo node_modules dist",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
   "devDependencies": {
-    "@emiya-turbo-origin/typescript-config": "workspace:*",
     "@emiya-turbo-origin/eslint-config": "workspace:*",
+    "@emiya-turbo-origin/typescript-config": "workspace:*",
+    "@types/lodash": "^4.17.4",
+    "dayjs": "^1.11.11",
+    "lodash": "^4.17.21",
     "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "lodash": ">=4.17.21",
+    "dayjs": ">=1.11.11"
   },
   "clean-package": "../../clean-package.config.json",
   "tsup": {

@@ -8,7 +8,10 @@
  * itemClassName('title') // list-item-title
  */
 export function prefixClass(prefix: string, defaultHyphen = '-') {
-  return function classNameWithPrefix(className?: string, hyphen = defaultHyphen): string {
+  return function classNameWithPrefix(
+    className?: string,
+    hyphen = defaultHyphen,
+  ): string {
     if (!className) return prefix;
     return `${prefix}${hyphen}${className}`;
   };
