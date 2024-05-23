@@ -24,7 +24,7 @@
     "build": "storybook build --docs",
     "build:full": "storybook build",
     "start": "pnpm dlx http-server storybook-static",
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint . --fix --max-warnings 0",
     "clean": "rimraf node_modules storybook-static"
   },
   "dependencies": {
