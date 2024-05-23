@@ -1,6 +1,6 @@
 {
-  "mode": "exit",
-  "tag": "next",
+  "mode": "pre",
+  "tag": "alpha",
   "initialVersions": {
     "@emiya-turbo-origin/docs": "0.0.0",
     "@emiya-turbo-origin/web": "0.0.0",
