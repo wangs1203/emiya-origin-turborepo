@@ -46,10 +46,30 @@
       "import": "./dist/es/base-loader/index.js",
       "require": "./dist/lib/base-loader/index.js"
     },
+    "./button": {
+      "types": "./dist/types/button.d.ts",
+      "import": "./dist/es/button.js",
+      "require": "./dist/lib/button.js"
+    },
+    "./code": {
+      "types": "./dist/types/code.d.ts",
+      "import": "./dist/es/code.js",
+      "require": "./dist/lib/code.js"
+    },
+    "./card": {
+      "types": "./dist/types/card.d.ts",
+      "import": "./dist/es/card.js",
+      "require": "./dist/lib/card.js"
+    },
     "./container": {
       "types": "./dist/types/container/index.d.ts",
       "import": "./dist/es/container/index.js",
       "require": "./dist/lib/container/index.js"
+    },
+    "./global-loader": {
+      "types": "./dist/types/global-loader/index.d.ts",
+      "import": "./dist/es/global-loader/index.js",
+      "require": "./dist/lib/global-loader/index.js"
     }
   },
   "scripts": {
