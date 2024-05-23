@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsup tailwind.config.ts --dts",
     "build:fast": "tsup tailwind.config.ts",
-    "dev": "tsup tailwind.config.ts",
+    "dev": "tsup tailwind.config.ts --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rimraf node_modules dist"
   },
