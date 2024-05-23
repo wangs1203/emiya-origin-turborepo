@@ -25,6 +25,10 @@
       "path": "../packages/utils/",
     },
     {
+      "name": "shared-constants",
+      "path": "../packages/constants/",
+    },
+    {
       "name": "storybook",
       "path": "../packages/storybook/",
     },
