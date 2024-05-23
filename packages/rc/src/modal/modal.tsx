@@ -5,11 +5,6 @@ import type { DraggableEvent, DraggableData } from 'react-draggable';
 import { memo, useCallback, useMemo, useRef, useState } from 'react';
 import { Modal as AntdModal } from 'antd';
 import Draggable from 'react-draggable';
-import { prefixClass } from '@emiya-turbo-origin/utils';
-
-const addPrefix = prefixClass('em-modal');
-
-console.log(addPrefix('__content'));
 
 export interface ModalProps extends AntdModalProps {
   draggable?: boolean;
@@ -56,19 +51,22 @@ export const Modal = memo(function BaseModal({
     [draggable, title, dragDisabled],
   );
 
-  const handleDragStart = (_e: DraggableEvent, data: DraggableData) => {
-    const { clientWidth, clientHeight } =
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- 在一些特定的情况或旧的浏览器中，可能需要通过 document.body 来获取或操作页面内容
-      document.documentElement || document.body;
-    const targetRect = draggleRef.current?.getBoundingClientRect();
-    if (!targetRect) return;
-    setBounds({
-      left: -targetRect.left + data.x,
-      top: -targetRect.top + data.y,
-      right: clientWidth - (targetRect.right - data.x),
-      bottom: clientHeight - (targetRect.bottom - data.y),
-    });
-  };
+  const handleDragStart = useCallback(
+    (_e: DraggableEvent, data: DraggableData) => {
+      const { clientWidth, clientHeight } =
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- 在一些特定的情况或旧的浏览器中，可能需要通过 document.body 来获取或操作页面内容
+        document.documentElement || document.body;
+      const targetRect = draggleRef.current?.getBoundingClientRect();
+      if (!targetRect) return;
+      setBounds({
+        left: -targetRect.left + data.x,
+        top: -targetRect.top + data.y,
+        right: clientWidth - (targetRect.right - data.x),
+        bottom: clientHeight - (targetRect.bottom - data.y),
+      });
+    },
+    [],
+  );
 
   const renderModal = useCallback(
     (modal: ReactNode) => {

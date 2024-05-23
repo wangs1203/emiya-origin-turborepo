@@ -4,7 +4,9 @@ interface GlobalLoaderProps {
   type?: 'line' | 'circle';
 }
 
-export function GlobalLoader({ type = 'line' }: GlobalLoaderProps): React.ReactElement {
+export function GlobalLoader({
+  type = 'line',
+}: GlobalLoaderProps): React.ReactElement {
   if (type === 'line') {
     return <GlobalLoaderLine />;
   }
