@@ -11,5 +11,7 @@
     "@emiya-turbo-origin/typescript-config": "0.0.0",
     "@emiya-turbo-origin/utils": "0.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "fifty-fireants-wink"
+  ]
 }
