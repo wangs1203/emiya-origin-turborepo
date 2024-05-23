@@ -7,5 +7,9 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@emiya-turbo-origin/docs", "@emiya-turbo-origin/storybook"]
+  "ignore": [
+    "@emiya-turbo-origin/docs",
+    "@emiya-turbo-origin/storybook",
+    "@emiya-turbo-origin/web"
+  ]
 }
