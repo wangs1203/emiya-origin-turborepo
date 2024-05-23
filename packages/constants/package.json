@@ -1,0 +1,69 @@
+{
+  "name": "@emiya-turbo-origin/constants",
+  "version": "0.0.0",
+  "homepage": "http://",
+  "description": "Constants",
+  "author": "Emiya Leon <wangs.coder@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "constants"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/wangs1203/emiya-origin-turborepo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/wangs1203/emiya-origin-turborepo.git",
+    "directory": "packages/constants"
+  },
+  "main": "./src/index.ts",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src --dts",
+    "build:fast": "tsup src",
+    "dev": "tsup src --watch",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf .turbo node_modules dist",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "devDependencies": {
+    "@emiya-turbo-origin/eslint-config": "workspace:*",
+    "@emiya-turbo-origin/typescript-config": "workspace:*",
+    "@types/lodash": "^4.17.4",
+    "antd": "^5.9.0",
+    "dayjs": "^1.11.11",
+    "lodash": "^4.17.21",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "dayjs": ">=1.11.11",
+    "lodash": ">=4.17.21"
+  },
+  "clean-package": "./clean-package.config.json",
+  "tsup": {
+    "clean": true,
+    "target": "es2020",
+    "format": [
+      "cjs",
+      "esm"
+    ]
+  }
+}
