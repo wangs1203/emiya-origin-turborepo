@@ -1,0 +1,15 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@emiya-turbo-origin/docs": "0.0.0",
+    "@emiya-turbo-origin/web": "0.0.0",
+    "@emiya-turbo-origin/eslint-config": "0.0.0",
+    "@emiya-turbo-origin/rc": "0.0.0",
+    "@emiya-turbo-origin/storybook": "0.0.0",
+    "@emiya-turbo-origin/tailwind-config": "0.0.0",
+    "@emiya-turbo-origin/typescript-config": "0.0.0",
+    "@emiya-turbo-origin/utils": "0.0.0"
+  },
+  "changesets": []
+}

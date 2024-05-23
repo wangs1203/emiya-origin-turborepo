@@ -1,5 +1,5 @@
 {
-  "name": "emiya-turborepo-demo",
+  "name": "emiya-origin-turborepo",
   "private": true,
   "scripts": {
     "build": "turbo run build --filter=!@ys-origin/storybook --filter=!@ys-origin/next-docs --filter=!@ys-origin/next-web",
