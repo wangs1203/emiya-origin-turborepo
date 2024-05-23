@@ -25,15 +25,6 @@ module.exports = {
       },
     ],
     'prettier/prettier': 'warn',
-    // https://eslint.org/docs/rules/max-lines
-    'max-lines': [
-      'warn',
-      {
-        max: 300,
-        skipBlankLines: true,
-        skipComments: true,
-      },
-    ],
   },
   overrides: [
     {
@@ -42,6 +33,20 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': [
           'warn',
           { fixToUnknown: false, ignoreRestArgs: true },
+        ],
+      },
+    },
+    {
+      files: ['*.ts?(x)', '*.js?(x)'],
+      rules: {
+        // https://eslint.org/docs/rules/max-lines
+        'max-lines': [
+          'warn',
+          {
+            max: 500,
+            skipBlankLines: true,
+            skipComments: true,
+          },
         ],
       },
     },
