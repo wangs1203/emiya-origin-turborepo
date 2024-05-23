@@ -33,10 +33,14 @@ export function Button({
   label,
   ...props
 }: ButtonProps): React.ReactElement {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode = primary
+    ? 'storybook-button--primary'
+    : 'storybook-button--secondary';
   return (
     <button
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={['storybook-button', `storybook-button--${size}`, mode].join(
+        ' ',
+      )}
       style={{ backgroundColor }}
       type="button"
       {...props}
