@@ -3,7 +3,7 @@
   "display": "Node Library",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "lib": ["ES2021", "DOM"],
     "target": "es6",
     "module": "esnext",
     "resolveJsonModule": true,
